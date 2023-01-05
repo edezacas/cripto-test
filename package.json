@@ -7,8 +7,9 @@
     "Eduard Deza <edezacas@gmail.com>"
   ],
   "scripts": {
-    "build:esbuild": "esbuild src/index.js --bundle --outfile=dist/index.js --minify",
+    "build:esbuild": "esbuild src/index.js --bundle --outfile=dist/index.js --minify --loader:.html=text",
     "build:css": "npx tailwindcss -i src/css/main.css -o dist/output.css --minify",
+    "build:index": "copy-file index.html dist/index.html",
     "build": "npm-run-all --parallel build:*"
   },
   "license": "MIT",
@@ -18,5 +19,8 @@
     "esbuild": "0.16.14",
     "npm-run-all": "^4.1.5",
     "tailwindcss": "^3.2.4"
+  },
+  "devDependencies": {
+    "copy-file-util": "^0.1.6"
   }
 }
