@@ -1,0 +1,80 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Criptografia</title>
+    <link rel="shortcut icon" href="#"/>
+    <link href="./dist/output.css" rel="stylesheet">
+    <script type="module" src="./dist/index.js"></script>
+</head>
+<body>
+<div class="container mx-auto p-4">
+    <h1 class="text-slate-900 text-4xl text-center tracking-tight font-extrabold sm:text-5xl dark:text-white">Jugando
+        con la criptografia</h1>
+    <div class="flex items-center justify-between">
+        <button id="btnKeys"
+                class="hover:bg-blue-400 group flex items-center rounded-md bg-blue-500 text-white text-sm font-medium pl-2 pr-3 py-2 shadow-sm">
+            <svg width="20" height="20" fill="currentColor" class="mr-2" aria-hidden="true">
+                <path d="M10 5a1 1 0 0 1 1 1v3h3a1 1 0 1 1 0 2h-3v3a1 1 0 1 1-2 0v-3H6a1 1 0 1 1 0-2h3V6a1 1 0 0 1 1-1Z"/>
+            </svg>
+            Generar pares de claves
+        </button>
+    </div>
+    <div id="keys"
+         class="mt-4 break-all text-clip overflow-hidden text-slate-900 tracking-tight dark:text-slate-50"></div>
+    <div class="grid grid-cols-2 gap-10">
+        <div class="">
+            <h3 class="mt-8 font-semibold text-indigo-500 dark:text-indigo-400 mb-10">Encriptar mensaje</h3>
+
+            <form name="encryptForm">
+                <div class="grid grid-cols-1 gap-6">
+                    <label class="block">
+                        <span class="text-gray-700">Clave Privada (HEX)</span>
+                        <input name="priv" class="mt-1 block w-full" type="text" placeholder=""/>
+                    </label>
+
+                    <label class="block">
+                        <span class="text-gray-700">Mensaje</span>
+                        <textarea name="msg" class="mt-1 block w-full" type="text" placeholder=""></textarea>
+                    </label>
+
+                    <input class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+                           type="submit"
+                           value="Encriptar"/>
+                </div>
+            </form>
+            <div id="data"
+                 class="mt-4 break-all text-clip overflow-hidden text-slate-900 tracking-tight dark:text-slate-50"></div>
+        </div>
+
+        <div class="">
+            <h3 class="mt-8 font-semibold text-indigo-500 dark:text-indigo-400 mb-10">Verificar mensaje</h3>
+
+            <form name="verifyForm">
+                <div class="grid grid-cols-1 gap-6">
+                    <label class="block">
+                        <span class="text-gray-700">Clave Pública (HEX)</span>
+                        <input name="pub" class="mt-1 block w-full" type="text" placeholder=""/>
+                    </label>
+
+                    <label class="block">
+                        <span class="text-gray-700">Mensaje</span>
+                        <textarea name="msg" class="mt-1 block w-full" type="text" placeholder=""></textarea>
+                    </label>
+
+                    <label class="block">
+                        <span class="text-gray-700">Firma</span>
+                        <input name="signature" class="mt-1 block w-full" type="text" placeholder=""/>
+                    </label>
+
+                    <input class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+                           type="submit"
+                           value="Verificar"/>
+                </div>
+            </form>
+            <div id="result"
+                 class="mt-4 text-3xl sm:text-4xl text-slate-900 font-extrabold tracking-tight dark:text-slate-50 "></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

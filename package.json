@@ -1,0 +1,22 @@
+{
+  "name": "cripto-edu",
+  "version": "0.0.1",
+  "description": "prueba de concepto edu",
+  "main": "src/index.js",
+  "contributors": [
+    "Eduard Deza <edezacas@gmail.com>"
+  ],
+  "scripts": {
+    "build:esbuild": "esbuild src/index.js --bundle --outfile=dist/index.js --minify",
+    "build:css": "npx tailwindcss -i src/css/main.css -o dist/output.css --minify",
+    "build": "npm-run-all --parallel build:*"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@noble/curves": "^0.5.1",
+    "@tailwindcss/forms": "^0.5.3",
+    "esbuild": "0.16.14",
+    "npm-run-all": "^4.1.5",
+    "tailwindcss": "^3.2.4"
+  }
+}
