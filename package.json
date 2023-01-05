@@ -1,5 +1,5 @@
 {
-  "name": "cripto-edu",
+  "name": "@edezacas/cripto-test",
   "version": "0.0.1",
   "description": "prueba de concepto edu",
   "main": "src/index.js",
